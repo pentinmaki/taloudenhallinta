@@ -3,7 +3,7 @@ import Item from '../Item'
 import Header from '../Header'
 import Menu from '../Menu'
 import Content from '../Content'
-import Button from '../../shared/buttons'
+import { FloatingButton } from '../../shared/buttons'
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
           <Item />
           <Item />
           <Item />
-          <Button primary>LISÄÄ UUSI RIVI</Button>
+          <FloatingButton secondary>+</FloatingButton>
         </Content>     
         <Menu />
       </div>
