@@ -1,5 +1,6 @@
 import styles from './Item.module.scss'
 import { MdNavigateNext } from 'react-icons/md'
+import { Link } from 'react-router-dom'
 
 
 function Item({data, ...props}) {
@@ -30,9 +31,9 @@ function Item({data, ...props}) {
         <div className={styles.item_average}>{average ? average + "/kk" : ""}</div>
       </div>
 
-          <div className={styles.item_edit}>
-            <MdNavigateNext />
-          </div>
+      <div className={styles.item_edit}>
+        <Link to={"/edit/" + data.id}><MdNavigateNext /></Link>
+      </div>
         </div>
       )    
   }
