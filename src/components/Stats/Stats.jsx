@@ -1,6 +1,8 @@
 import styles from './Stats.module.scss'
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { LabelList, Legend, Pie, PieChart } from 'recharts'
+import { Cell } from 'recharts'
+import randomColor from 'randomcolor'
 
 function Stats(props) {
   const locale = "fi-FI"
@@ -28,6 +30,9 @@ function Stats(props) {
   }
 
   const piedata = props.data.reduce(reducer, [])
+  const piecolors = randomColor({ count: piedata.length, 
+    seed: 'siemenluku', 
+    luminosity: 'dark' })
 
   return (
     <div className={styles.stats}>
@@ -60,6 +65,8 @@ function Stats(props) {
                        formatter={
                          value => numberFormat.format(value)
                        } /> 
+                      { piecolors.map( color => <Cell fill={color} key={color} />)}
+
           </Pie>
           <Legend />
           <Tooltip formatter={ value => numberFormat.format(value) } />
