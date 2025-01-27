@@ -40,8 +40,6 @@ function AppRouter(props) {
             element: <Settings typelist={props.typelist}
             onTypeSubmit={props.onTypeSubmit} /> }
                       
-                      
-
       ]
     }
   ])
