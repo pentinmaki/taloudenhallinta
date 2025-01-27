@@ -17,7 +17,7 @@ function AppRouter(props) {
         { path: "", 
           element: <Items />, 
           loader: () => { return props.data } },
-        { path: "stats", element: <Stats /> },
+          { path: "stats", element: <Stats data={props.data} /> },
         { path: "edit/:id",
           element: <EditItem onItemSubmit={props.onItemSubmit}
           onItemDelete={props.onItemDelete} 
