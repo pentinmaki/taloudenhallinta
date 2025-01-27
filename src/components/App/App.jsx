@@ -11,6 +11,13 @@ function App() {
     setData(copy)
   }
 
+  const handleTypeSubmit = (type) => {
+    let copy = typelist.slice()
+    copy.push(type)
+    copy.sort()
+    setTypelist(copy)
+  }
+
   const handleItemSubmit = (newitem) => {
     let copy = data.slice()
 
@@ -31,10 +38,13 @@ function App() {
 
   return (
     <>
-               <AppRouter data={data}
+            <AppRouter data={data}
                  typelist={typelist}
                  onItemSubmit={handleItemSubmit}
-                 onItemDelete={handleItemDelete} />
+                 onItemDelete={handleItemDelete}
+                 onTypeSubmit={handleTypeSubmit} />
+```'
+
 
   
     </>
