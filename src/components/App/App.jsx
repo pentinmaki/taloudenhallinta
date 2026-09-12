@@ -1,10 +1,10 @@
 import AppRouter from '../AppRouter'
-import { useState } from 'react'
 import useLocalStorage from '../../shared/uselocalstorage'
 
 function App() {
   const [data, setData] = useLocalStorage('taloudenhallinta-data',[])
   const [typelist, setTypelist] = useLocalStorage('taloudenhallinta-typelist',[])
+  const [monthlyBudget, setMonthlyBudget] = useLocalStorage('taloudenhallinta-monthly-budget', 0)
 
   const handleItemDelete = (id) => {
     let copy = data.slice()
@@ -37,17 +37,19 @@ function App() {
     setData(copy)
   }
 
+  const handleBudgetSubmit = (budget) => {
+    setMonthlyBudget(Math.max(0, Number(budget) || 0))
+  }
+
   return (
     <>
-            <AppRouter data={data}
+      <AppRouter data={data}
                  typelist={typelist}
+                 monthlyBudget={monthlyBudget}
                  onItemSubmit={handleItemSubmit}
                  onItemDelete={handleItemDelete}
-                 onTypeSubmit={handleTypeSubmit} />
-```'
-
-
-  
+                 onTypeSubmit={handleTypeSubmit}
+                 onBudgetSubmit={handleBudgetSubmit} />
     </>
   )
 }

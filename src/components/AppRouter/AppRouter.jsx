@@ -15,8 +15,7 @@ function AppRouter(props) {
       errorElement: <ErrorPage />,
       children: [
         { path: "", 
-          element: <Items />, 
-          loader: () => { return props.data } },
+          element: <Items data={props.data} monthlyBudget={props.monthlyBudget} /> },
           { path: "stats", element: <Stats data={props.data} /> },
         { path: "edit/:id",
           element: <EditItem onItemSubmit={props.onItemSubmit}
@@ -38,7 +37,9 @@ function AppRouter(props) {
   
           { path: "settings",
             element: <Settings typelist={props.typelist}
-            onTypeSubmit={props.onTypeSubmit} /> }
+            monthlyBudget={props.monthlyBudget}
+            onTypeSubmit={props.onTypeSubmit}
+            onBudgetSubmit={props.onBudgetSubmit} /> }
                       
       ]
     }

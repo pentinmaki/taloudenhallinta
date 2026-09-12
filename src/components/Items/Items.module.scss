@@ -1,4 +1,109 @@
+@import '../../assets/styles/_config.scss';
+
 .items {
     padding-bottom: 4rem;
   }
-  
+
+  .monthlySummary {
+    background: linear-gradient(135deg, $color-primary, #78879e);
+    color: $color-neutral-lightest;
+    padding: 1.25rem $container-padding;
+  }
+
+  .monthPicker {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .monthPicker p {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+    opacity: 0.8;
+  }
+
+  .monthPicker button {
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font-size: 2rem;
+    line-height: 1;
+    padding: 0.15rem 0.75rem;
+  }
+
+  .monthLabel {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: bold;
+    position: relative;
+  }
+
+  .monthLabel input {
+    cursor: pointer;
+    inset: 0;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .summaryValues {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 1.25rem;
+  }
+
+  .summaryValues div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .summaryValues span {
+    font-size: 0.75rem;
+    opacity: 0.8;
+  }
+
+  .summaryValues strong {
+    font-size: 1rem;
+  }
+
+  .overBudget strong {
+    color: #ffe0e2;
+  }
+
+  .progress {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 1rem;
+    height: 0.45rem;
+    margin-top: 1.25rem;
+    overflow: hidden;
+  }
+
+  .progress div {
+    background-color: $color-neutral-lightest;
+    border-radius: inherit;
+    height: 100%;
+    transition: width 0.2s ease;
+  }
+
+  .setBudgetLink {
+    color: $color-neutral-lightest;
+    display: inline-block;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+  }
+
+  .listTitle {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 1.25rem $container-padding 0.5rem;
+  }
+
+  .empty {
+    color: $color-neutral-dark;
+    padding: 0 $container-padding;
+  }
